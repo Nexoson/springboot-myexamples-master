@@ -2,18 +2,21 @@ package com.neo.fastdfsdemo.controller;
 
 import com.neo.fastdfsdemo.fastdfs.FastDFSClient;
 import com.neo.fastdfsdemo.fastdfs.FastDFSFile;
+import com.neo.fastdfsdemo.mapper.FastDfsMapper;
+import com.neo.fastdfsdemo.model.ImgEntity;
+import com.neo.fastdfsdemo.model.ResultEntity;
+import com.neo.fastdfsdemo.service.FastDfsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 
 /**
@@ -28,6 +31,19 @@ import java.io.InputStream;
 public class FastDfsController {
 
     private static Logger log = LoggerFactory.getLogger(FastDfsController.class);
+
+    @Autowired
+    FastDfsService fastDfsService;
+
+    @PostMapping("getImgList")
+    @ResponseBody
+    public String getImgList(){
+        ResultEntity result = new ResultEntity();
+        List<ImgEntity> imgList = fastDfsService.getImgList();
+        result.setData(imgList);
+        result.setMsg("请求成功");
+        return result.toString();
+    }
 
     @GetMapping("/uploadIndex")
     public String index(){

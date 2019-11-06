@@ -7,7 +7,17 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
       resolve-lazily: false
-
-
 server:
   port: 8083
+
+
+spring.datasource.url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+spring.datasource.username: test
+spring.datasource.password: test123
+spring.datasource.driver-class-name: oracle.jdbc.driver.OracleDriver
+
+mybatis:
+#  config-location: classpath:mybatis/spring-mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neo.fastdfsdemo.mapper.FastDfsMapper" >
+
+
+    <sql id="Base_Column_List" >
+        fileId, fileName, filePath, fileSize, fileType, uploadTime, remark, extId
+    </sql>
+
+ <!--   <select id="getImgList" resultType="com.neo.fastdfsdemo.model.ImgEntity" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM IMG_DFS_DATA
+    </select>
+-->
+    <select id="getImgList" resultType="com.neo.fastdfsdemo.model.ImgEntity">
+        SELECT FILE_ID as fileId,
+               FILE_NAME as fileName,
+               FILE_PATH as filePath,
+               FILE_SIZE as fileSize,
+               FILE_TYPE as fileType,
+               UPLOAD_TIME as uploadTime,
+               REMARK as remark,
+               EXT_ID as extId
+        FROM IMG_DFS_DATA
+    </select>
+
+</mapper>
