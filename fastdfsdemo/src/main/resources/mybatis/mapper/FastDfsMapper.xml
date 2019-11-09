@@ -4,16 +4,15 @@
 
 
     <sql id="Base_Column_List" >
-        fileId, fileName, filePath, fileSize, fileType, uploadTime, remark, extId
+        FILE_ID, FILE_NAME, FILE_PATH, FILE_SIZE, FILE_TYPE, UPLOAD_TIME, REMARK, EXT_ID
     </sql>
 
- <!--   <select id="getImgList" resultType="com.neo.fastdfsdemo.model.ImgEntity" >
+<!--    <select id="getImgList" resultType="com.neo.fastdfsdemo.model.ImgEntity" >
         SELECT
         <include refid="Base_Column_List" />
         FROM IMG_DFS_DATA
-    </select>
--->
-    <select id="getImgList" resultType="com.neo.fastdfsdemo.model.ImgEntity">
+    </select>-->
+<!--    <select id="getImgList" resultType="com.neo.fastdfsdemo.model.ImgEntity">
         SELECT FILE_ID as fileId,
                FILE_NAME as fileName,
                FILE_PATH as filePath,
@@ -23,6 +22,17 @@
                REMARK as remark,
                EXT_ID as extId
         FROM IMG_DFS_DATA
-    </select>
+    </select>-->
 
+    <select id="getImgList" resultType="com.neo.fastdfsdemo.model.ImgEntity">
+        SELECT FILE_ID,
+               FILE_NAME,
+               FILE_PATH,
+               FILE_SIZE,
+               FILE_TYPE,
+               UPLOAD_TIME,
+               REMARK,
+               EXT_ID
+        FROM IMG_DFS_DATA
+    </select>
 </mapper>
