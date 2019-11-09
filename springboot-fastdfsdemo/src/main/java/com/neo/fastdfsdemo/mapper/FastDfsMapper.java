@@ -2,6 +2,7 @@ package com.neo.fastdfsdemo.mapper;
 
 import com.neo.fastdfsdemo.model.ImgEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
  **/
 
 @Mapper
+@Repository
 public interface FastDfsMapper {
 
     List<ImgEntity> getImgList();
