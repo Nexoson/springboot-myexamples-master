@@ -2,7 +2,6 @@ package com.neo.fastdfsdemo.controller;
 
 import com.neo.fastdfsdemo.fastdfs.FastDFSClient;
 import com.neo.fastdfsdemo.fastdfs.FastDFSFile;
-import com.neo.fastdfsdemo.mapper.FastDfsMapper;
 import com.neo.fastdfsdemo.model.ImgEntity;
 import com.neo.fastdfsdemo.model.ResultEntity;
 import com.neo.fastdfsdemo.service.FastDfsService;
