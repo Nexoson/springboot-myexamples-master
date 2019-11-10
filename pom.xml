@@ -8,5 +8,12 @@
     <artifactId>spring-boot-myexamples-master</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <modules>
+        <module>springboot-fastdfsdemo</module>
+        <module>springboot-helloworld</module>
+        <module>springboot-restfuldemo</module>
+        <module>springboot-thymeleaf</module>
+        <module>springboot-thymeleafupload</module>
+    </modules>
 
 </project>
