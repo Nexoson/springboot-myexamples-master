@@ -2,6 +2,7 @@ package com.neo.swagger.controller;
 
 import com.neo.swagger.model.Message;
 import com.neo.swagger.service.MessageRepository;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,10 +15,10 @@ import java.util.List;
  * @Date 2019/11/9 17:33
  * @Version 1.0
  **/
-
+@Api(value = "用户管理", description = "用户管理API", position = 100, protocols = "http")
 @RestController
-@RequestMapping("/")
-public class RestfulController {
+@RequestMapping("/user")
+public class UserController {
 
     @Autowired
     private MessageRepository messageRepository;

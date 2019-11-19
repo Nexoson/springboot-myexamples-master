@@ -1,6 +1,6 @@
 package com.neo.swagger.service;
 
-import com.neo.restfuldemo.model.Message;
+import com.neo.swagger.model.Message;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicLong;
 @Service("MessageRepository")
 public class InMemoryMessageRepository implements MessageRepository{
     private static AtomicLong counter = new AtomicLong();
-    private final ConcurrentMap<Long,Message> messages = new ConcurrentHashMap<>();
+    private final ConcurrentMap<Long, Message> messages = new ConcurrentHashMap<>();
 
 
 
