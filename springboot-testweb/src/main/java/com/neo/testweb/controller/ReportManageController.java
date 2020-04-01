@@ -4,10 +4,12 @@ import com.jcraft.jsch.SftpException;
 import com.neo.testweb.utils.SftpCustomUtil;
 import com.neo.testweb.utils.base.EnumFormResultMsg;
 import com.neo.testweb.utils.base.FormDataResult;
+import com.neo.thymeleafupload.feign.ReportManageFeign;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -31,6 +33,9 @@ import java.time.format.DateTimeFormatter;
 @Slf4j
 public class ReportManageController {
 
+
+    @Autowired
+    private ReportManageFeign reportManageFeign;
 
     @ApiOperation("测试响应")
     @RequestMapping(value = "/hi")
@@ -113,5 +118,12 @@ public class ReportManageController {
         //保存操作日志
 
         return result.toString();
+    }
+
+    @ApiOperation("调用其它模块上传")
+    @RequestMapping(value = "/jumpReportFile", method = RequestMethod.POST)
+    public String jumpReportFile(@RequestPart(value = "file", required = false) MultipartFile file, @RequestParam("fileName") String fileName, @RequestParam("remark") String remark){
+        String msg = reportManageFeign.jumpReportFile(file, remark);
+        return msg;
     }
 }
