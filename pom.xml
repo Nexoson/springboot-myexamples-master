@@ -6,6 +6,7 @@
 
     <groupId>com.neo</groupId>
     <artifactId>spring-boot-myexamples-master</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
@@ -14,6 +15,7 @@
         <module>springboot-restfuldemo</module>
         <module>springboot-thymeleaf</module>
         <module>springboot-thymeleafupload</module>
+        <module>springboot-testweb</module>
     </modules>
 
 </project>
