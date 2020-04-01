@@ -8,7 +8,7 @@ spring:
       max-request-size: 100MB
       resolve-lazily: false
 server:
-  port: 8083
+  port: 8084
 
 
 spring.datasource.url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
