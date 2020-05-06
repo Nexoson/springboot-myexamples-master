@@ -1,0 +1,11 @@
+
+server:
+  port: 8088
+
+spring:
+  resources:
+    cache:
+      period: 6000
+    chain:
+      compressed: true
+      cache: false
