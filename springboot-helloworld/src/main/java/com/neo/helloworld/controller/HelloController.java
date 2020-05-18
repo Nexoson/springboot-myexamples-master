@@ -19,4 +19,14 @@ public class HelloController {
         return "Hello SpringBoot.";
     }
 
+    @RequestMapping(value = "/yes")
+    public String sayYes(){
+        return "SpringBoot YES";
+    }
+
+    @RequestMapping(value = "/good")
+    public String sayGood(){
+        return "SpringBoot is good";
+    }
+
 }
